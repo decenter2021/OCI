@@ -1,4 +1,4 @@
-function x1 = plotCov(invP)
+function x1 = plotCov2(invP)
     n = size(invP,1);
     % (for plotting we assume that X and Q are positive defnite)
     % Plotting parameters 
