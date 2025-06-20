@@ -26,8 +26,6 @@ W.P.M.H. (Maurice) Heemels<sup>1</sup> <a href="https://scholar.google.com/citat
  
 An illustrative example of the OCI method is available in the MATLAB live script ```illustrative_OCI.mlx```.
 
- 
-![a](https://user-images.githubusercontent.com/40807922/175348654-3d31489a-40ec-4225-b26b-adb244f2e5b7.svg)
 
 ***
 
