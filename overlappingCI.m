@@ -31,7 +31,6 @@ function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric)
     n = size(H,2);
     m = size(Yb{1,1},1);
     M = size(Yb,1);
-    epsl = 1e-6;
     % Build SDP
     opts = sdpsettings('solver','sdpt3');
     omega = sdpvar(M,1);
