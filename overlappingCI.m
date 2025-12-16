@@ -32,7 +32,7 @@ function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric)
     m = size(Yb{1,1},1);
     M = size(Yb,1);
     % Build SDP
-    opts = sdpsettings('solver','sdpt3');
+    opts = sdpsettings('solver','mosek');
     omega = sdpvar(M,1);
     Y = zeros(m,m);
     for i = 1:M
