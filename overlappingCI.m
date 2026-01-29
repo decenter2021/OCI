@@ -4,6 +4,7 @@
 %   - Matrices H,R,C
 %   - Cell of bounds Yb
 %   - Metric 'trace' (default) or 'det'
+%   - verbose (optinal)
 % Outputs: Matrices U,B,Y,K
 % Assumptions and limitations: none
 % Other m-files required: none
@@ -26,13 +27,17 @@
 %     semidefinite-quadratic-linear programs using SDPT3, Mathematical 
 %     Programming Ser. B, 95 (2003), pp. 189–217.
 
-function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric)
+function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric,verbose)
+    % Optional arguments
+    if nargin < 6 || isempty(verbose)
+        verbose = 1;
+    end
     % Sizes
     n = size(H,2);
     m = size(Yb{1,1},1);
     M = size(Yb,1);
     % Build SDP
-    opts = sdpsettings('solver','mosek');
+    opts = sdpsettings('solver','mosek','verbose',verbose);
     omega = sdpvar(M,1);
     Y = zeros(m,m);
     for i = 1:M
@@ -46,13 +51,18 @@ function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric)
     cntr = [cntr, [B eye(n); eye(n) (H'/R)*H-U]>=0];
     % Solve SDP
     if strcmp(metric, 'det')
-        optimize(cntr,-logdet((H'/R)*H-U),opts);
+        sol = optimize(cntr,-logdet((H'/R)*H-U),opts);
     elseif strcmp(metric, 'trace')
-        optimize(cntr,trace(B),opts);
+        sol = optimize(cntr,trace(B),opts);
     else
         warning("Unknown bound metric. Using trace as default.")
-        optimize(cntr,trace(B),opts);
-    end    
+        sol = optimize(cntr,trace(B),opts);
+    end   
+    % Throw an error if not solved to optimality
+    if sol.problem ~= 0
+        error('OCI optimization failed (code %d): %s\n%s', ...
+            sol.problem, sol.info,yalmiperror(sol.problem));
+    end
     % Get solution
     Y = value(Y);
     U = value(U);
