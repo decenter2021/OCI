@@ -58,13 +58,13 @@ To contribute to this repository
 ## 💥 References
 
 <p align="justify">
-L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2025. (submitted)
+L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026. (submitted)
 
 ~~~BibTeX
-@misc{PedrosoBatistaEtAl2025OCI,
+@misc{PedrosoBatistaEtAl2026OCI,
 	author = {Leonardo Pedroso and Pedro Batista and W. P. M. H. Heemels},
 	title = {Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources},
-	year = {2025},
+	year = {2026},
 	note  = {(submitted)}
 }
 ~~~
