@@ -4,7 +4,7 @@
 
 This repository is part of the work
 <p align="justify">
-L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2025. (submitted)
+L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026. (submitted)
 </p>
 
 If you use this repository, please [reference](#-references) the publication above.
