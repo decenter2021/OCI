@@ -10,8 +10,9 @@
 %          3: normalization that minimizes a cost function (default: 0)
 %       - 'warning_on_numerical_problems': 0: throw error if terminates
 %          with error 4 (happens if the orders of magnitude of the inputs 
-%          arevtoo different); 1: throw warning and output last iteration
+%          are too different); 1: throw warning and output last iteration
 %          of the solver as the solution (default: 0)
+%       - 'cachesolvers': solver cachesolvers option (default: 0)
 % Outputs: Matrices U,B,Y,K
 % Assumptions and limitations: none
 % Other m-files required: none
@@ -51,6 +52,9 @@ function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric,options)
     end
     if ~isfield(options, 'warning_on_numerical_problems')
         options.warning_on_numerical_problems = 0;
+    end
+    if ~isfield(options,'cachesolvers')
+        options.cachesolvers = 0;
     end
     % Sizes
     n = size(H,2);
@@ -100,7 +104,7 @@ function [K,B,Y,U] = overlappingCI(H,R,C,Yb,metric,options)
     HRCn = ((H'/Rn)*C)/(alpha_HC^2);
 
     % Build SDP
-    opts = sdpsettings('solver','mosek','verbose',options.verbose);
+    opts = sdpsettings('solver','mosek','verbose',options.verbose,'cachesolvers',options.cachesolvers);
     Un = sdpvar(n,n,'symmetric');
     Bn = sdpvar(n,n,'symmetric');
     Yn = sdpvar(m,m,'symmetric');
