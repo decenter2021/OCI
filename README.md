@@ -4,7 +4,7 @@
 
 This repository is part of the work
 <p align="justify">
-L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026. (submitted)
+L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026, arXiv preprint arXiv:2603.16768. <a href="https://doi.org/10.48550/arXiv.2603.16768">doi.org/10.48550/arXiv.2603.16768</a>
 </p>
 
 If you use this repository, please [reference](#-references) the publication above.
@@ -58,14 +58,16 @@ To contribute to this repository
 ## 💥 References
 
 <p align="justify">
-L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026. (submitted)
+L. Pedroso, P. Batista, and W.P.M.H. Heemels, "Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources", 2026, arXiv preprint arXiv:2603.16768. <a href="https://doi.org/10.48550/arXiv.2603.16768">doi.org/10.48550/arXiv.2603.16768</a>
+</p>
 
 ~~~BibTeX
-@misc{PedrosoBatistaEtAl2026OCI,
-	author = {Leonardo Pedroso and Pedro Batista and W. P. M. H. Heemels},
-	title = {Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources},
-	year = {2026},
-	note  = {(submitted)}
+@misc{PedrosoBatistaEtAl2025OCI,
+  author    = {L. Pedroso and P. Batista and W. P. M. H. Heemels},
+  title     = {Overlapping Covariance Intersection: Fusion with Partial Structural Knowledge of Correlation from Multiple Sources},
+  year      = {2026},
+  note      = {arXiv preprint arXiv:2603.16768},
+  doi       = {10.48550/arXiv.2603.16768},
 }
 ~~~
 </p> 
