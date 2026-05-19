@@ -1,6 +1,6 @@
-function [x,y,z] = plotCov3(Y)
+function [x,y,z] = plotCov3(Y,N)
     [V, D] = eig(Y);
-    [u, v] = meshgrid(linspace(0, 2*pi, 100), linspace(0, pi, 50));
+    [u, v] = meshgrid(linspace(0, 2*pi, N), linspace(0, pi, round(N/2)));
     x_sphere = cos(u) .* sin(v);
     y_sphere = sin(u) .* sin(v);
     z_sphere = cos(v);
